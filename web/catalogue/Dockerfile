@@ -10,5 +10,5 @@ RUN npm install
 
 COPY server.js /opt/server/
 
-ENTRYPOINT [ "executable" ] ["node", "server.js"]
+ENTRYPOINT ["node", "server.js"]
 
