@@ -7,12 +7,12 @@ volumes:
   mongodb:
 services:
  #docker run -d --name mongodb --network roboshop -v mongodb:/data/db mongodb:v1
-  mongodb:
+  mongo:
     image: mongo:v1
-    container_name: mongodb
+    container_name: mongo
     volumes:
     - type: volume
-      source: mongodb
+      source: mongo
       target: /data/db
       volume:
         nocopy: true
