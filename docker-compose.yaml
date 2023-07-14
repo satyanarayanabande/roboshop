@@ -6,6 +6,7 @@ volumes:
  #docker volume create mongodb
   mongodb:
   redis:
+  mysql:
 services:
   catalogue:
     image: catalogue:v1
@@ -52,3 +53,12 @@ services:
     depends_on:
       - catalogue
       - redis
+  mysql:
+    image: mysql:v1
+    container_name: mysql
+    volumes:
+    - type: volume
+      source: mysql
+      target: /var/lib/mysql/
+      volume:
+          nocopy: true
