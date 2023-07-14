@@ -10,5 +10,5 @@ RUN npm install
 
 COPY server.js /opt/server/
 
-ENTRYPOINT ["node", "server.js"]
+CMD ["node", "server.js"]
 
