@@ -5,6 +5,7 @@ networks:
 volumes:
  #docker volume create mongodb
   mongodb:
+  redis:
 services:
   catalogue:
     image: catalogue:v1
