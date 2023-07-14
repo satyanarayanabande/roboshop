@@ -62,3 +62,9 @@ services:
       target: /var/lib/mysql/
       volume:
           nocopy: true
+  shipping:
+    image: shipping:v1
+    container_name: shipping
+    depends_on:
+      - cart
+      - mysql
