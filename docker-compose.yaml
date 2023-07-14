@@ -31,4 +31,24 @@ services:
       target: /data
       volume:
           nocopy: true
-        
+  web:
+    image: web:v1
+    container_name: web
+    ports:
+      - "80:80"
+    depends_on:
+      - catalogue
+      - user
+      - cart
+  user: 
+    image: user:v1
+    container_name: user
+    depends_on:
+      - mongo
+      - redis
+  cart:
+    image: cart:v1
+    container_name: cart
+    depends_on:
+      - catalogue
+      - redis
